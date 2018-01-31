@@ -1,0 +1,43 @@
+img {
+	width: 35px;
+}
+
+form {
+	margin: 0;
+	position: relative;
+	left: 50%;
+	-moz-transform: translate3d(-50%, 0, 0);
+	-ms-transform: translate3d(-50%, 0, 0);
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(-50%, 0, 0);
+	width: 600px;
+	padding: 20px;
+	background-color: black;
+	border: 3px solid rgba(255, 255, 255, 0.4);
+	background: inherit;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	border-radius: 12px;
+	background: rgb(245, 180, 179);
+	margin-bottom: 12px;
+	margin-top: 12px;
+}
+
+#red{
+	background-color: #ff4242;
+}
+
+#orange{
+	background-color: #ffc75e;
+}
+
+#blue{
+	background-color: #4242ff;
+}
+
+#googleMap {
+	height: 300px;
+	width: 550px;
+	overflow: visible;
+	position: relative;
+}

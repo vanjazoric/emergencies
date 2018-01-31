@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prijava vanredne situacije</title>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="js/territory.js"></script>
+<script src="js/emergency.js"></script>
+<script src="js/googleMap.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEewZLiOHPTn0moI4Cos2un7xMdIU4EMU&libraries=places&callback=initAutocomplete"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		&nbsp;<img src="./images/logo.png">&emsp;
+		<div class="collapse navbar-collapse" id="navbarColor01">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="#">Početna <span
+						class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item active"><a class="nav-link"
+					href="addEmergency.html">Prijavi vanrednu situaciju</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li class="nav-item" id="loggedIn"></li>
+				<li class="nav-item" id="log"></li>
+				<li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+				<li class="nav-item"><a class="nav-link" id="user"></a></li>
+			</ul>
+		</div>
+	</nav>
+	<form id="registerForm" action="api/emergencies"
+		enctype="multipart/form-data" method="POST" accept-charset="utf-8">
+		<fieldset>
+			<legend>Prijava vanredne situacije</legend>
+			<div class="form-group">
+				<label for="location">Lokacija</label> <input required type="text"
+					name="location" class="form-control" id="location"
+					placeholder="Naziv mesta/područja/loakcije gde je došlo do vanredne situacije">
+			</div>
+			<div class="form-group">
+				<label for="municipality">Opština</label> <input required
+					type="text" name="municipality" class="form-control"
+					id="municipality">
+			</div>
+			<div class="form-group">
+				<label for="description">Opis</label> <input required type="text"
+					name="description" class="form-control" id="description"
+					placeholder="Kratak opis dešavanja">
+			</div>
+			<table>
+				<tr>
+					<td><label for="urgency">Nivo hitnosti</label></td>
+					<td><select id="urgency" name="urgency"><option
+								selected disabled>Izaberi nivo hitnosti...</option>
+							<option id="red">CRVENO</option>
+							<option id="orange">NARANDŽASTO</option>
+							<option id="blue">PLAVO</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for="picture">Izaberi fotografiju&emsp;</label></td>
+					<td><input id="picture" name="picture" type="file"
+						accept="image/*" /></td>
+				</tr>
+				<tr>
+					<td><label for="territory" class="col-lg-2control-label">Teritorija&ensp;
+					</label></td>
+					<td><select id="territory" name="territory"><option
+								selected disabled>Izaberi teritoriju...</option>
+					</select></td>
+				</tr>
+			</table>
+			<br> <input type="submit" class="btn btn-primary"
+				value="Prijavi">
+		</fieldset>
+		<br>
+		<div id="googleMap"></div>
+	</form>
+</body>
+</html>

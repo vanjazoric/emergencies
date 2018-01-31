@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kreiranje naloga</title>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="js/register.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<img src="./images/logo.png">
+		<div class="collapse navbar-collapse" id="navbarColor01">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="#">Home <span
+						class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Features</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li class="nav-item"><a class="nav-link" id="log"></a></li>
+				<li class="nav-item active"><a class="nav-link"
+					href="register.html">Register</a></li>
+				<li class="nav-item"><a class="nav-link" id="user">fgdgf</a></li>
+			</ul>
+		</div>
+	</nav>
+	<form id="registerForm" action="api/users/register"
+		enctype="multipart/form-data" method="POST" accept-charset="utf-8">
+		<fieldset>
+			<legend>Kreiranje naloga</legend>
+			<div class="form-group">
+				<label for="firstName">Ime</label> <input required type="text"
+					name="firstName" class="form-control" id="firstName">
+			</div>
+			<div class="form-group">
+				<label for="lastName">Prezime</label> <input required type="text"
+					name="lastName" class="form-control" id="lastName">
+			</div>
+			<div class="form-group">
+				<label for="lastName">Korisničko ime</label> <input required
+					type="text" name="username" class="form-control" id="username">
+			</div>
+			<div class="form-group">
+				<label for="password">Lozinka</label> <input required
+					type="password" name="password" class="form-control" id="password">
+			</div>
+			<div class="form-group">
+				<label for="password">Ponovi lozinku</label> <input required
+					type="password" class="form-control" id="confirmPassword">
+			</div>
+			<p id="match"
+				style="visibility: hidden; color: green; font-weight: bold">
+				Passwords match!&emsp;<img src="./images/ok.png" width="16"
+					height="16">
+			</p>
+			<div class="form-group">
+				<label for="phone">Telefon</label> <input name="phone" required type="text"
+					class="form-control" id="phone">
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label> <input required type="email"
+					class="form-control" name="email" id="email" aria-describedby="emailHelp">
+				<small id="emailHelp" class="form-text text-muted">Vaš email
+					neće biti vidljiv nikome.</small>
+			</div>
+			<label for="territory" class="col-lg-2control-label">Teritorija&ensp;
+			</label> <select id="territory" name="territory"><option selected disabled>Izaberi
+					teritoriju...</option>
+			</select> <br> <br>
+			<div class="form-group">
+				<label for="picture">Choose a picture: </label><br> <input
+					id="picture" name="picture" type="file" accept="image/*" />
+			</div>
+			<input type="submit" class="btn btn-primary" value="Kreiraj nalog">
+		</fieldset>
+	</form>
+</body>
+</html>
