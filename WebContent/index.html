@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Emergencies</title>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="js/home.js"></script>
+<script src="js/dateFormat.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="css/styles.css" />
+<script src="js/googleMap.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -30,5 +34,41 @@
 			</ul>
 		</div>
 	</nav>
+	<div id="filter">
+		<table>
+			<tr>
+				<td></td>
+				<td><a href="#" onclick="clearFilters()">Clear filters</a></td>
+			</tr>
+			<tr height="50">
+				<td><label class='filterLabel' for="datepicker">Filter
+						snippets by date</label>&emsp;</td>
+				<td><input type="text" id="datepicker"
+					placeholder="Pick a date..."></td>
+			</tr>
+			<tr height="50">
+				<td><label class='filterLabel' for="lanFilter">Filter
+						snippets by prog. language:</label>&emsp;</td>
+				<td><select id="lanFilter"><option selected="selected">Choose
+							a language</option>
+				</select></td>
+			</tr>
+			<tr height="50">
+				<td><label class='filterLabel' for="desFilter">Filter
+						snippets by description:</label>&emsp;</td>
+				<td><input type="text" id="desFilter">&emsp; <input
+					type="submit" onclick="descFilter()" class='btn btn-success btn-xs'
+					value="Filter"></td>
+			</tr>
+			<tr>
+				<td><input type="radio" name='orderComm' value='date'
+					id='orderCommDate'>&ensp;Order comments by date</td>
+				<td><input type="radio" name='orderComm' value='likes'
+					id='orderCommLikes'>&ensp;Order comments by likes</td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<div id="emergencies"></div>
 </body>
 </html>

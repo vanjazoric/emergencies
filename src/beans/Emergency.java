@@ -4,6 +4,7 @@
 package beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -13,29 +14,33 @@ import java.util.Date;
 public class Emergency implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	private int id;
 	private String location;
 	private String municipality;
 	private String description;
 	private Date date;
 	private Territory territory;
 	private Urgency urgency;
-	private String picture;
+	private String photo;
 	private State state;
 	private Volunteer volunteer;
+	private ArrayList<Comment> comments;
 	
-	public Emergency(String location, String municipality, String description,
-			Date date, Territory territory, Urgency urgency, String picture,
-			State state, Volunteer volunteer) {
+	public Emergency(int id, String location, String municipality, String description,
+			Date date, Territory territory, Urgency urgency, String photo,
+			State state, Volunteer volunteer, ArrayList<Comment> comments) {
 		super();
+		this.id = id;
 		this.location = location;
 		this.municipality = municipality;
 		this.description = description;
 		this.date = date;
 		this.territory = territory;
 		this.urgency = urgency;
-		this.picture = picture;
+		this.photo = photo;
 		this.state = state;
 		this.volunteer = volunteer;
+		this.comments = comments;
 	}
 
 	public String getLocation() {
@@ -70,12 +75,12 @@ public class Emergency implements Serializable {
 		this.date = date;
 	}
 
-	public Territory getTerriyory() {
+	public Territory getTerritory() {
 		return territory;
 	}
 
-	public void setTerriyory(Territory terriyory) {
-		this.territory = terriyory;
+	public void setTerritory(Territory territory) {
+		this.territory = territory;
 	}
 
 	public Urgency getUrgency() {
@@ -86,12 +91,12 @@ public class Emergency implements Serializable {
 		this.urgency = urgency;
 	}
 
-	public String getPicture() {
-		return picture;
+	public String getPhoto() {
+		return photo;
 	}
 
-	public void setPicture(String picture) {
-		this.picture = picture;
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 
 	public State getState() {
@@ -110,12 +115,31 @@ public class Emergency implements Serializable {
 		this.volunteer = volunteer;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	
+	
+	public ArrayList<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(ArrayList<Comment> comments) {
+		this.comments = comments;
+	}
+
 	@Override
 	public String toString() {
-		return "Emergency [location=" + location + ", municipality="
-				+ municipality + ", description=" + description + ", date="
-				+ date + ", terriyory=" + territory + ", urgency=" + urgency
-				+ ", picture=" + picture + ", state=" + state + ", volunteer="
-				+ volunteer + "]";
+		return "Emergency [id=" + id + ", location=" + location
+				+ ", municipality=" + municipality + ", description="
+				+ description + ", date=" + date + ", territory=" + territory
+				+ ", urgency=" + urgency + ", photo=" + photo + ", state="
+				+ state + ", volunteer=" + volunteer + ", comments=" + comments
+				+ "]";
 	}
 }

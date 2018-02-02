@@ -77,7 +77,6 @@ public class UserController {
 			// save uploaded picture to file
 			DataHandler.savePicture(picture, uploadedFileLocation);
 		}
-
 		ArrayList<User> read = new ArrayList<User>();
 
 		String fileName2 = context.getRealPath("/") + "/files/users.ser";
@@ -85,7 +84,7 @@ public class UserController {
 		if (file2.exists()) {
 			read = DataHandler.deserialize(file2);
 		}
-		read.add(volunteer);
+		read.add((User)volunteer);
 		DataHandler.serialize(read, file2);
 		System.out.println(read.size());
 		java.net.URI location = new java.net.URI("../../Emergencies/login.html");
@@ -143,12 +142,15 @@ public class UserController {
 		if (file.exists()) {
 			read = DataHandler.deserialize(file);
 		} else {
-			Admin a1 = new Admin("admin", "123456", "Admin", "Admirovic",
+			User a1 = new Admin("admin", "123456", "Admin", "Admirovic",
 					"0643891303", "admin@gmail.com", "1223.jpg", Role.ADMIN);
-			Admin a2 = new Admin("vanja_admin", "123456", "Vanja", "Zorić",
+			User a2 = new Admin("vanja_admin", "123456", "Vanja", "Zorić",
 					"0643891303", "vanja@gmail.com", "1223.jpg", Role.ADMIN);
+			User a3 = new Volunteer("vanjaa", "123456", "Vanja", "Zzzz",
+					"0643891303", "vanj@gmail.com", "1223.jpg", Role.VOLUNTEER, null, false);
 			read.add(a1);
 			read.add(a2);
+			read.add(a3);
 			DataHandler.serialize(read, file);
 		}
 		ObjectMapper mapper = new ObjectMapper();

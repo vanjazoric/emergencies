@@ -2,7 +2,7 @@ img {
 	width: 35px;
 }
 
-form {
+.form {
 	margin: 0;
 	position: relative;
 	left: 50%;
@@ -40,4 +40,71 @@ form {
 	width: 550px;
 	overflow: visible;
 	position: relative;
+}
+
+#emergencies .emergency {
+	margin: 0;
+	position: relative;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(-50%, 0, 0);
+	width: 600px;
+	padding: 10px;
+	background-color: rgba(245, 180, 179, 0.1);
+	border: 1px solid rgba(235, 104, 100, 0.9);
+	border-radius: 12px;
+	font-family: 'Arial Narrow';
+	margin-bottom:
+}
+
+#filter{
+	margin-top: 12px;
+	position: relative;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(-50%, 0, 0);
+	width: 600px;
+	padding: 20px;
+	background-color: rgb(245, 180, 179);
+	border: 2px solid rgb(235, 104, 100);
+	border-radius: 12px;
+}
+
+.filterLabel{
+	font-size: 15px;
+	color: rgb(100,100,100);
+	font-weight: lighter;
+}
+
+.fa.fa-circle {
+	font-size:36px;
+	padding-right: 30px;
+}
+
+.description {
+	display: inline;
+}
+
+.data {
+	display: block;
+}
+
+.imgE{
+	width:140px;
+	position: relative;
+	text-align: right;
+	margin-bottom: 10px;
+}
+
+.locationTd{
+	width:75%;	
+}
+.imgTd{
+	width:25%;
+}
+
+#addV {
+	padding-top: 0px;
+	padding-bottom: 1px;
+	margin-top: 1px;
 }

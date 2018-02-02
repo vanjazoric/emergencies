@@ -8,7 +8,7 @@ var getTerritories = function() {
 			var territories = JSON.parse(str);
 			
 			  territories.sort(function(a, b) { return
-			  a.territory.localeCompare(b.lterritory); });
+			  a.name.localeCompare(b.name); });
 			 
 			for (var i = 0; i < territories.length; i++) {
 				$('#territory').append(

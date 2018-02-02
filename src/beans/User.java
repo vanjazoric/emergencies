@@ -18,11 +18,11 @@ public abstract class User implements Serializable {
 	private String lastName;
 	private String phone;
 	private String email;
-	private String picture;
+	private String photo;
 	private Role role;
 	
 	public User(String username, String password, String firstName,
-			String lastName, String phone, String email, String picture,
+			String lastName, String phone, String email, String photo,
 			Role role) {
 		super();
 		this.username = username;
@@ -31,7 +31,7 @@ public abstract class User implements Serializable {
 		this.lastName = lastName;
 		this.phone = phone;
 		this.email = email;
-		this.picture = picture;
+		this.photo = photo;
 		this.role = role;
 	}
 
@@ -83,12 +83,12 @@ public abstract class User implements Serializable {
 		this.email = email;
 	}
 
-	public String getPicture() {
-		return picture;
+	public String getphoto() {
+		return photo;
 	}
 
-	public void setPicture(String picture) {
-		this.picture = picture;
+	public void setphoto(String photo) {
+		this.photo = photo;
 	}
 
 	public Role getRole() {
@@ -103,7 +103,7 @@ public abstract class User implements Serializable {
 	public String toString() {
 		return "User [username=" + username + ", password=" + password
 				+ ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", phone=" + phone + ", email=" + email + ", picture="
-				+ picture + ", role=" + role + "]";
+				+ ", phone=" + phone + ", email=" + email + ", photo="
+				+ photo + ", role=" + role + "]";
 	}
 }

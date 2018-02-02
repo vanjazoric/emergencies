@@ -17,9 +17,14 @@ var loginTest = function() {
 						$('#log')
 								.append(
 										"<a class='nav-link' href=\"api/users/logout\">Log Out</a>");
+						emergenciesView();
 					}
 				},
 				error : function(err) {
 				}
 			});
 };
+
+var emergenciesView = function() {
+	
+}

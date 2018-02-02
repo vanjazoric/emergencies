@@ -1,5 +1,5 @@
 	function initAutocomplete() {
-
+		
 		var map = new google.maps.Map(document.getElementById('googleMap'), {
 			center : {
 				lat : 45.255,
@@ -58,4 +58,5 @@
 			});
 			map.fitBounds(bounds);
 		});
+		return this;
 	}
