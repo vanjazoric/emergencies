@@ -2,6 +2,25 @@ img {
 	width: 35px;
 }
 
+body #success {
+	margin: 0;
+	position: relative;
+	left: 50%;
+	-moz-transform: translate3d(-50%, 0, 0);
+	-ms-transform: translate3d(-50%, 0, 0);
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(-50%, 0, 0);
+	width: 400px;
+	padding: 20px;
+	background-color: black;
+	border: 3px solid rgba(255, 255, 255, 0.4);
+	background: inherit;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	border-radius: 12px;
+	background: rgba(209, 218, 229, 0.8);
+}
+
 .form {
 	margin: 0;
 	position: relative;
@@ -40,6 +59,21 @@ img {
 	width: 550px;
 	overflow: visible;
 	position: relative;
+}
+
+#territories .territory {
+	margin: 0;
+	position: relative;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(-50%, 0, 0);
+	width: 600px;
+	padding: 10px;
+	background-color: rgba(245, 180, 179, 0.1);
+	border: 1px solid rgba(235, 104, 100, 0.9);
+	border-radius: 12px;
+	font-family: 'Arial Narrow';
+	margin-top: 12px;
 }
 
 #emergencies .emergency {
@@ -92,7 +126,7 @@ img {
 .imgE{
 	width:140px;
 	position: relative;
-	text-align: right;
+	text-align: center;
 	margin-bottom: 10px;
 }
 
@@ -107,4 +141,88 @@ img {
 	padding-top: 0px;
 	padding-bottom: 1px;
 	margin-top: 1px;
+}
+
+.btn.btn-primary.btn-sm{
+	padding-top: 0px;
+	padding-bottom: 1px;
+}
+
+.thumbnail {
+	object-fit: cover; 
+	width:35px;
+	height:35px;
+}
+
+.commentText, .description{
+	word-break: break-all; 
+	word-wrap: break-word;
+	white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+}
+
+html body #profile #picture img {
+	margin-left: 5%;
+	margin-top: 3%;
+	object-fit: cover;
+	width: 350px;
+	height: 350px;
+	border: 3px solid rgba(0, 0, 0, 0.1);
+	padding: 10px;
+	border-collapse: collapse;
+	float: left;
+}
+
+html body #profile #name p {
+	float: right;
+	margin-right: 45%;
+	margin-top: 3%;
+	font-size: 35px;
+	text-align: left;
+	display: inline;
+}
+
+#block{
+	margin-right: 53%;	
+    text-align: left;
+    float:right;
+}
+
+html body #profile #info {
+	float: right;
+	margin-right: 44%;
+	margin-top: 3%;
+	text-align: left;
+}
+
+html body #profile #info p {
+	display: inline;
+}
+
+html body #profile #info img{
+	display: inline;
+}
+
+.icon {
+	height: 24px;
+	width: 24px;
+	object-fit: cover;
+	display: inline;
+}
+
+#imgT{
+	width:24px;
+	height:24px;
+}
+
+#imgEdit{
+	width:20px;
+	height:20px;
+	margin-right: 4px;
+}
+
+.dataT td{
+	width: 192px;
 }

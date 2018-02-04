@@ -2,12 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Emergencies</title>
+<title>Vanredne situacije</title>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="js/dateFormat.js"></script>
-<script src="js/datepicker.min.js"></script>
-<script src="js/home.js"></script>
-<script src="js/user.js"></script>
+<script src="js/emergencies.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
@@ -34,34 +32,6 @@
 			</ul>
 		</div>
 	</nav>
-	<div id="filter">
-		<table>
-			<tr>
-				<td></td>
-				<td><a href="#" onclick="clearFilters()">Clear filters</a></td>
-			</tr>
-			<tr height="50">
-				<td><label class='filterLabel' for="datepicker">Filtriraj po datumu:</label>&emsp;</td>
-				<td><input type="text" id="datepicker"
-					placeholder="Odaberi datum..."></td>
-			</tr>
-			<tr height="50">
-				<td><label class='filterLabel' for="urgencyFilter">Filtriraj po hitnosti:</label>&emsp;</td>
-				<td><select id="urgencyFilter"><option selected="selected">Izaberi hitnost...</option>
-				</select></td>
-			</tr>
-			<tr height="50">
-				<td><label class='filterLabel' for="territoryFilter">Filtriraj po nazivu teritorije:</label>&emsp;</td>
-				<td><select id="territoryFilter"><option selected="selected">Izaberi teritoriju...</option>
-				</select></td>
-			</tr>
-			<tr>
-				<td><input type="radio" name='orderVol'
-					id='orderVol'>&ensp;Sortiraj po postavljenim volonterima</td>
-			</tr>
-		</table>
-	</div>
-	<br>
 	<div id="emergencies"></div>
 </body>
 </html>

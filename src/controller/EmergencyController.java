@@ -28,6 +28,7 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import services.DataHandler;
+import beans.Comment;
 import beans.Emergency;
 import beans.State;
 import beans.Territory;
@@ -54,7 +55,7 @@ public class EmergencyController {
 			@Context ServletContext context) throws URISyntaxException,
 			IOException {
 
-		System.out.println(picture+"   "+fileDetails);
+		System.out.println(picture + "   " + fileDetails);
 
 		String fileName = context.getRealPath("/") + "/files/territories.ser";
 		File file = new File(fileName);
@@ -64,7 +65,8 @@ public class EmergencyController {
 		int id = rand.nextInt(1000000000);
 		Emergency emergency = new Emergency(id, location, municipality,
 				description, new Date(), territory, Urgency.valueOf(urgency),
-				fileDetails.getFileName(), State.ACTIVE, null, null);
+				fileDetails.getFileName(), State.ACTIVE, null,
+				new ArrayList<Comment>());
 
 		System.out.println(emergency);
 		if (!fileDetails.getFileName().equals("")) {
@@ -73,8 +75,7 @@ public class EmergencyController {
 
 			// save uploaded picture to file
 			DataHandler.savePicture(picture, uploadedFileLocation);
-		}
-		else{
+		} else {
 			emergency.setPhoto("logo.png");
 		}
 
@@ -97,6 +98,7 @@ public class EmergencyController {
 	public String getEmergencies(@Context ServletContext context)
 			throws URISyntaxException, IOException {
 
+		System.out.println("UCITAVA SE POCETNA");
 		ArrayList<Emergency> read = new ArrayList<Emergency>();
 		String fileName = context.getRealPath("/") + "/files/emergencies.ser";
 		File file = new File(fileName);
@@ -151,5 +153,29 @@ public class EmergencyController {
 			}
 		}
 		return retVal;
+	}
+
+	@POST
+	@Path("/archive")
+	@Produces(MediaType.TEXT_PLAIN)
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	public Boolean archiveEmergency(@FormParam("id") int id,
+			@Context ServletContext context) throws URISyntaxException,
+			IOException {
+		ArrayList<Emergency> read = new ArrayList<Emergency>();
+		String fileName = context.getRealPath("/") + "/files/emergencies.ser";
+		File file = new File(fileName);
+		if (file.exists()) {
+			read = DataHandler.deserialize(file);
+		}
+		for (Emergency e : read) {
+			if (e.getId() == id) {
+				e.setState(State.ARCHIVED);
+				DataHandler.serialize(read, file);
+				return true;
+			}
+		}
+		return false;
+
 	}
 }

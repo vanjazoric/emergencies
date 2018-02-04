@@ -37,7 +37,6 @@ public class VolunteerController {
 	public String getVolunteers(@PathParam("id") int id,
 			@Context ServletContext context) throws JsonProcessingException {
 
-		System.out.println("ID DOBIJEN" + id);
 		ArrayList<User> read = new ArrayList<User>();
 		ArrayList<User> retList = new ArrayList<User>();
 		String fileName = context.getRealPath("/") + "/files/users.ser";
@@ -61,7 +60,6 @@ public class VolunteerController {
 		ObjectMapper mapper = new ObjectMapper();
 		// Object to JSON in String
 		String jsonInString = mapper.writeValueAsString(retList);
-		System.out.println("VOLONTERI" + jsonInString);
 		return jsonInString;
 	}
 

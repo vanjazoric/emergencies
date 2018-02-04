@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Prijava vanredne situacije</title>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="js/territory.js"></script>
 <script src="js/emergency.js"></script>
 <script src="js/googleMap.js"></script>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
@@ -57,7 +56,7 @@
 			<table>
 				<tr>
 					<td><label for="urgency">Nivo hitnosti</label></td>
-					<td><select id="urgency" name="urgency"><option
+					<td><select id="urgency" name="urgency" required><option
 								selected disabled>Izaberi nivo hitnosti...</option>
 							<option id="red">CRVENO</option>
 							<option id="orange">NARANDŽASTO</option>
@@ -72,7 +71,7 @@
 				<tr>
 					<td><label for="territory" class="col-lg-2control-label">Teritorija&ensp;
 					</label></td>
-					<td><select id="territory" name="territory"><option
+					<td><select id="territory" name="territory" required><option
 								selected disabled>Izaberi teritoriju...</option>
 					</select></td>
 				</tr>

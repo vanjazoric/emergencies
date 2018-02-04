@@ -1,30 +1,40 @@
 $(window).load(function() {
-	//loginTest();
-	getTerritories();
+	loginTest();
 });
 
 var loginTest = function() {
-	$
-			.ajax({
-				url : 'api/users/loginTest',
+	$.ajax({
+		url : 'api/users/loginTest',
+		method : 'get',
+		dataType : 'json',
+		success : function(response) {
+			if (response != null && response.isBlocked == true) {
+				window.location.href="index.html";
+			}
+			else{
+				getTerritories();
+			}	}})};
+		
+		var getTerritories = function() {
+			$.ajax({
+				url : 'api/territories',
 				method : 'get',
 				dataType : 'json',
 				success : function(response) {
-					if (response.role == null) {
-						window.location.replace("login.html");
-					} else {
-						$('#loggedIn').append("<a class='nav-link active'>"+response.username.toString()+"</a>");
-						$('#log')
-								.append(
-										"<a class='nav-link' href=\"api/users/logout\">Log Out</a>");
-						emergenciesView();
+					var str = JSON.stringify(response);
+					var territories = JSON.parse(str);
+					
+					  territories.sort(function(a, b) { return
+					  a.name.localeCompare(b.name); });
+					 
+					for (var i = 0; i < territories.length; i++) {
+						$('#territory').append(
+								"<option>" + territories[i].name + "</option>");
 					}
 				},
 				error : function(err) {
+					alert(err);
 				}
 			});
-};
-
-var emergenciesView = function() {
-	
-}
+			return this;
+		};

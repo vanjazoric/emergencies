@@ -3,14 +3,16 @@
  */
 package beans;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @author Vanja
  *
  */
-public class Comment {
+public class Comment implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private String text;
 	private Date date;
 	private User user;
